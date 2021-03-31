@@ -1,0 +1,29 @@
+<div class="container">
+	<input type="file" (change)="onFileChange($event)" class="btn-bs-file btn btn-lg btn-primary form-control"
+		multiple="false" />
+
+	<hr />
+	<table datatable [dtOptions]="dtOptions" class="row-border hover" [dtTrigger]="dtTrigger">
+		<thead>
+			<tr>
+				<th *ngFor="let head of headers" class="table-header">{{head}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let person of data" class="table-data">
+				<td>{{ person[0]}}</td>
+				<td>{{ person[1]}}</td>
+				<td>{{ person[2]}}</td>
+				<td>{{ person[3]}}</td>
+			</tr>
+		</tbody>
+		<tfoot [ngClass]="{'hide':filtersHidden}">
+			<tr>
+				<th><input type="text" placeholder="Search First name" name="search-first-name" /></th>
+				<th><input type="text" placeholder="Search Last name" name="search-last-name" /></th>
+				<th><input type="text" placeholder="Search Issue Count" name="issue-count" /></th>
+				<th><input type="text" placeholder="Search Date Of Birth" name="dob" /></th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
