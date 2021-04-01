@@ -20,11 +20,10 @@ export class SheetJSComponent {
   wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
 
   dtTrigger: Subject<any> = new Subject<any>();
-
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 2
+      pageLength: 10
     };
   }
 
@@ -51,9 +50,7 @@ export class SheetJSComponent {
           const that = this;
           $('input', this.footer()).on('keyup change', function () {
             if (that.search() !== this['value']) {
-              that
-                .search(this['value'])
-                .draw();
+              that.search(this['value']).draw();
             }
           });
         });

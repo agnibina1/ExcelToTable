@@ -3,7 +3,7 @@
 		multiple="false" />
 
 	<hr />
-	<table datatable [dtOptions]="dtOptions" class="row-border hover" [dtTrigger]="dtTrigger">
+	<table datatable id="table-excel" dt-instance="dtInstance" [dtOptions]="dtOptions" class="row-border hover" [dtTrigger]="dtTrigger">
 		<thead>
 			<tr>
 				<th *ngFor="let head of headers" class="table-header">{{head}}</th>
